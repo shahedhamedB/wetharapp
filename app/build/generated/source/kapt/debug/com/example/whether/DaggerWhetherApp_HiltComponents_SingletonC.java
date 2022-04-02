@@ -17,10 +17,17 @@ import com.example.whether.receiver.AlarmReceiver;
 import com.example.whether.receiver.AlarmReceiver_MembersInjector;
 import com.example.whether.receiver.MyFirebaseMessagingService;
 import com.example.whether.receiver.MyFirebaseMessagingService_MembersInjector;
+import com.example.whether.retrofit.data.HomeDataSourse;
 import com.example.whether.retrofit.di.AppModule;
+import com.example.whether.retrofit.di.AppModule_ProvideGsonFactory;
+import com.example.whether.retrofit.di.AppModule_ProvideNetworkServiceFactory;
+import com.example.whether.retrofit.di.AppModule_ProvideRetrofitFactory;
 import com.example.whether.retrofit.di.AppModule_ProvideSharedPreferencesFactory;
+import com.example.whether.retrofit.services.NetworkService;
 import com.example.whether.ui.home.HomeActivity;
 import com.example.whether.ui.homewether.HomeFragment;
+import com.example.whether.ui.homewether.HomeViewModel_AssistedFactory;
+import com.example.whether.ui.homewether.HomeViewModel_AssistedFactory_Factory;
 import com.example.whether.utils.Prefs;
 import dagger.hilt.android.internal.builders.ActivityComponentBuilder;
 import dagger.hilt.android.internal.builders.ActivityRetainedComponentBuilder;
@@ -34,9 +41,11 @@ import dagger.internal.DoubleCheck;
 import dagger.internal.MemoizedSentinel;
 import dagger.internal.Preconditions;
 import java.util.Collections;
+import java.util.Map;
 import java.util.Set;
 import javax.annotation.Generated;
 import javax.inject.Provider;
+import retrofit2.Retrofit;
 
 @Generated(
     value = "dagger.internal.codegen.ComponentProcessor",
@@ -50,6 +59,8 @@ public final class DaggerWhetherApp_HiltComponents_SingletonC extends WhetherApp
   private final ApplicationContextModule applicationContextModule;
 
   private volatile Object sharedPreferences = new MemoizedSentinel();
+
+  private volatile Object retrofit = new MemoizedSentinel();
 
   private DaggerWhetherApp_HiltComponents_SingletonC(
       ApplicationContextModule applicationContextModuleParam) {
@@ -76,6 +87,24 @@ public final class DaggerWhetherApp_HiltComponents_SingletonC extends WhetherApp
 
   private Prefs getPrefs() {
     return new Prefs(getSharedPreferences());
+  }
+
+  private Retrofit getRetrofit() {
+    Object local = retrofit;
+    if (local instanceof MemoizedSentinel) {
+      synchronized (local) {
+        local = retrofit;
+        if (local instanceof MemoizedSentinel) {
+          local = AppModule_ProvideRetrofitFactory.provideRetrofit(AppModule_ProvideGsonFactory.provideGson(), getPrefs());
+          retrofit = DoubleCheck.reentrantCheck(retrofit, local);
+        }
+      }
+    }
+    return (Retrofit) local;
+  }
+
+  private NetworkService getNetworkService() {
+    return AppModule_ProvideNetworkServiceFactory.provideNetworkService(getRetrofit());
   }
 
   @Override
@@ -164,12 +193,47 @@ public final class DaggerWhetherApp_HiltComponents_SingletonC extends WhetherApp
     private final class ActivityCImpl extends WhetherApp_HiltComponents.ActivityC {
       private final Activity activity;
 
+      private volatile Provider<HomeDataSourse> homeDataSourseProvider;
+
+      private volatile Provider<HomeViewModel_AssistedFactory> homeViewModel_AssistedFactoryProvider;
+
       private ActivityCImpl(Activity activityParam) {
         this.activity = activityParam;
       }
 
+      private HomeDataSourse getHomeDataSourse() {
+        return new HomeDataSourse(DaggerWhetherApp_HiltComponents_SingletonC.this.getNetworkService());
+      }
+
+      private Provider<HomeDataSourse> getHomeDataSourseProvider() {
+        Object local = homeDataSourseProvider;
+        if (local == null) {
+          local = new SwitchingProvider<>(1);
+          homeDataSourseProvider = (Provider<HomeDataSourse>) local;
+        }
+        return (Provider<HomeDataSourse>) local;
+      }
+
+      private HomeViewModel_AssistedFactory getHomeViewModel_AssistedFactory() {
+        return HomeViewModel_AssistedFactory_Factory.newInstance(getHomeDataSourseProvider());
+      }
+
+      private Provider<HomeViewModel_AssistedFactory> getHomeViewModel_AssistedFactoryProvider() {
+        Object local = homeViewModel_AssistedFactoryProvider;
+        if (local == null) {
+          local = new SwitchingProvider<>(0);
+          homeViewModel_AssistedFactoryProvider = (Provider<HomeViewModel_AssistedFactory>) local;
+        }
+        return (Provider<HomeViewModel_AssistedFactory>) local;
+      }
+
+      private Map<String, Provider<ViewModelAssistedFactory<? extends ViewModel>>> getMapOfStringAndProviderOfViewModelAssistedFactoryOf(
+          ) {
+        return Collections.<String, Provider<ViewModelAssistedFactory<? extends ViewModel>>>singletonMap("com.example.whether.ui.homewether.HomeViewModel", (Provider) getHomeViewModel_AssistedFactoryProvider());
+      }
+
       private ViewModelProvider.Factory getProvideFactory() {
-        return ViewModelFactoryModules_ActivityModule_ProvideFactoryFactory.provideFactory(activity, ApplicationContextModule_ProvideApplicationFactory.provideApplication(DaggerWhetherApp_HiltComponents_SingletonC.this.applicationContextModule), Collections.<String, Provider<ViewModelAssistedFactory<? extends ViewModel>>>emptyMap());
+        return ViewModelFactoryModules_ActivityModule_ProvideFactoryFactory.provideFactory(activity, ApplicationContextModule_ProvideApplicationFactory.provideApplication(DaggerWhetherApp_HiltComponents_SingletonC.this.applicationContextModule), getMapOfStringAndProviderOfViewModelAssistedFactoryOf());
       }
 
       @Override
@@ -231,7 +295,7 @@ public final class DaggerWhetherApp_HiltComponents_SingletonC extends WhetherApp
         }
 
         private ViewModelProvider.Factory getProvideFactory() {
-          return ViewModelFactoryModules_FragmentModule_ProvideFactoryFactory.provideFactory(fragment, ApplicationContextModule_ProvideApplicationFactory.provideApplication(DaggerWhetherApp_HiltComponents_SingletonC.this.applicationContextModule), Collections.<String, Provider<ViewModelAssistedFactory<? extends ViewModel>>>emptyMap());
+          return ViewModelFactoryModules_FragmentModule_ProvideFactoryFactory.provideFactory(fragment, ApplicationContextModule_ProvideApplicationFactory.provideApplication(DaggerWhetherApp_HiltComponents_SingletonC.this.applicationContextModule), ActivityCImpl.this.getMapOfStringAndProviderOfViewModelAssistedFactoryOf());
         }
 
         @Override
@@ -296,6 +360,28 @@ public final class DaggerWhetherApp_HiltComponents_SingletonC extends WhetherApp
       private final class ViewCImpl extends WhetherApp_HiltComponents.ViewC {
         private ViewCImpl(View view) {
 
+        }
+      }
+
+      private final class SwitchingProvider<T> implements Provider<T> {
+        private final int id;
+
+        SwitchingProvider(int id) {
+          this.id = id;
+        }
+
+        @SuppressWarnings("unchecked")
+        @Override
+        public T get() {
+          switch (id) {
+            case 0: // com.example.whether.ui.homewether.HomeViewModel_AssistedFactory 
+            return (T) ActivityCImpl.this.getHomeViewModel_AssistedFactory();
+
+            case 1: // com.example.whether.retrofit.data.HomeDataSourse 
+            return (T) ActivityCImpl.this.getHomeDataSourse();
+
+            default: throw new AssertionError(id);
+          }
         }
       }
     }

@@ -7,6 +7,7 @@ import com.example.whether.receiver.MyFirebaseMessagingService_GeneratedInjector
 import com.example.whether.retrofit.di.AppModule;
 import com.example.whether.ui.home.HomeActivity_GeneratedInjector;
 import com.example.whether.ui.homewether.HomeFragment_GeneratedInjector;
+import com.example.whether.ui.homewether.HomeViewModel_HiltModule;
 import dagger.Binds;
 import dagger.Component;
 import dagger.Module;
@@ -130,7 +131,10 @@ public final class WhetherApp_HiltComponents {
   }
 
   @Subcomponent(
-      modules = ActivityCBuilderModule.class
+      modules = {
+          HomeViewModel_HiltModule.class,
+          ActivityCBuilderModule.class
+      }
   )
   @ActivityRetainedScoped
   public abstract static class ActivityRetainedC implements ActivityRetainedComponent,
