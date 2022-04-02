@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\User\\Desktop\\Hawalena\\Hawalena\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-es-rES\\values-es-rES.xml",
+            "outputFile": "C:\\Users\\User\\Documents\\GitHub\\wethareapp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-es-rES\\values-es-rES.xml",
             "map": [
                 {
                     "source": "C:\\Users\\User\\.gradle\\caches\\transforms-3\\64387b055dcf889341c3eebeb8ad8b82\\transformed\\jetified-facebook-android-sdk-4.26.0\\res\\values-es-rES\\values-es-rES.xml",
