@@ -1,11 +1,6 @@
 [
   {
-    "name": "favarit_nav",
-    "navigationXmlIds": [],
-    "deepLinks": []
-  },
-  {
-    "name": "profile_nav",
+    "name": "home_nav",
     "navigationXmlIds": [],
     "deepLinks": []
   }

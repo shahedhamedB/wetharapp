@@ -3,19 +3,13 @@ package com.example.whether.utils
 class AppConstants {
 
     companion object{
-        const val BASE_URL = "https://bdirectory.dominate.dev/api/"
+        const val BASE_URL = "http://api.worldweatheronline.com/premium/v1/"
         const val defaultLanguage:String ="en"
         const val defaultLanguageKey:String ="DEFAULT_LANGUAGE"
         const val userTypeKey:String ="USER_TYPE"
         const val isLoggedInKey:String ="isLoggedInKey"
         const val USER_TOKEN="user token"
         const val CURRENT_FRAGMENT="Main Fragment"
-        const val WEAK:String ="Weak"
-        const val MEDIUM:String ="Medium"
-        const val STRONG:String ="Strong"
-        const val USER_EMAIL="user email"
-        const val USER_PHONE="user phone"
-        const val USER_NAME="user name"
         const val NOTIF_KEY="notfy key"
         const val DEVICE_TOKEN="device token"
         const val PASSWORD_PATTERN = "^" +
