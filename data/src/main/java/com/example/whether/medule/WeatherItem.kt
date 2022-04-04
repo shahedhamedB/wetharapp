@@ -17,7 +17,7 @@ data class WeatherItem(@SerializedName("date")
                        @SerializedName("maxtempF")
                        val maxtempF: String = "",
                        @SerializedName("hourly")
-                       val hourly: List<HourlyItem>?,
+                       val hourly: MutableList<HourlyItem>?,
                        @SerializedName("avgtempC")
                        val avgtempC: String = "",
                        @SerializedName("astronomy")

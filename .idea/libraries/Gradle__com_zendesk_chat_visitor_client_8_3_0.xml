@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: com.zendesk:chat-visitor-client:8.3.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.zendesk/chat-visitor-client/8.3.0/bb6cf4776a525659d6d9d136d77d5c9a19bd545a/chat-visitor-client-8.3.0.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.zendesk/chat-visitor-client/8.3.0/634e4a1be87ee6e4db8907bae42436391525f27d/chat-visitor-client-8.3.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.zendesk/chat-visitor-client/8.3.0/4251674f42d547417cd53ad87e11e7a9a4dd43f/chat-visitor-client-8.3.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
