@@ -4,13 +4,30 @@
             "outputFile": "C:\\Users\\User\\Documents\\GitHub\\wethareapp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-zh\\values-zh.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\User\\.gradle\\caches\\transforms-3\\2296d42cb65d9bf64375e2cb1f71e53d\\transformed\\jetified-ucrop-2.2.2\\res\\values-zh\\values-zh.xml",
+                    "source": "C:\\Users\\User\\.gradle\\caches\\transforms-3\\71d1ecd13eab7637cc148a97ab35f37b\\transformed\\jetified-WheelPicker-1.1.2\\res\\values-zh\\values-zh.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,89,125",
+                        "endColumns": "33,35,34",
+                        "endOffsets": "84,120,155"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\User\\.gradle\\caches\\transforms-3\\136609decf9f2b45fcbee623013836e5\\transformed\\jetified-ucrop-2.2.2\\res\\values-zh\\values-zh.xml",
                     "from": {
                         "startLines": "2,3,4",
                         "startColumns": "4,4,4",
                         "startOffsets": "55,109,163",
                         "endColumns": "53,53,46",
                         "endOffsets": "104,158,205"
+                    },
+                    "to": {
+                        "startLines": "5,6,7",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "160,214,268",
+                        "endColumns": "53,53,46",
+                        "endOffsets": "209,263,310"
                     }
                 }
             ]

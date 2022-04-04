@@ -1,9 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: com.github.sevar83:indeterminate-checkbox:1.0.5@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/2da487e0a0c45f3bc05a5cc34ceea04c/transformed/jetified-indeterminate-checkbox-1.0.5/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/2da487e0a0c45f3bc05a5cc34ceea04c/transformed/jetified-indeterminate-checkbox-1.0.5/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/2da487e0a0c45f3bc05a5cc34ceea04c/transformed/jetified-indeterminate-checkbox-1.0.5/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/3161ea94d2f33ff3b72288276de5b593/transformed/jetified-indeterminate-checkbox-1.0.5/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/3161ea94d2f33ff3b72288276de5b593/transformed/jetified-indeterminate-checkbox-1.0.5/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/3161ea94d2f33ff3b72288276de5b593/transformed/jetified-indeterminate-checkbox-1.0.5/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

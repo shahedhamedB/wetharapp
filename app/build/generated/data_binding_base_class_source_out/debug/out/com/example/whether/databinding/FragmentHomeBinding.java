@@ -4,25 +4,58 @@ package com.example.whether.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.LinearLayoutCompat;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
 import com.example.whether.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
+import java.lang.String;
 
 public final class FragmentHomeBinding implements ViewBinding {
   @NonNull
-  private final LinearLayout rootView;
+  private final ConstraintLayout rootView;
 
-  private FragmentHomeBinding(@NonNull LinearLayout rootView) {
+  @NonNull
+  public final RecyclerView companyMarketRecyclerview;
+
+  @NonNull
+  public final TextView country;
+
+  @NonNull
+  public final RecyclerView hotSellingRecyclerView;
+
+  @NonNull
+  public final ImageView language;
+
+  @NonNull
+  public final LinearLayoutCompat linearLayoutCompat;
+
+  @NonNull
+  public final TextView tvDegree;
+
+  private FragmentHomeBinding(@NonNull ConstraintLayout rootView,
+      @NonNull RecyclerView companyMarketRecyclerview, @NonNull TextView country,
+      @NonNull RecyclerView hotSellingRecyclerView, @NonNull ImageView language,
+      @NonNull LinearLayoutCompat linearLayoutCompat, @NonNull TextView tvDegree) {
     this.rootView = rootView;
+    this.companyMarketRecyclerview = companyMarketRecyclerview;
+    this.country = country;
+    this.hotSellingRecyclerView = hotSellingRecyclerView;
+    this.language = language;
+    this.linearLayoutCompat = linearLayoutCompat;
+    this.tvDegree = tvDegree;
   }
 
   @Override
   @NonNull
-  public LinearLayout getRoot() {
+  public ConstraintLayout getRoot() {
     return rootView;
   }
 
@@ -43,10 +76,50 @@ public final class FragmentHomeBinding implements ViewBinding {
 
   @NonNull
   public static FragmentHomeBinding bind(@NonNull View rootView) {
-    if (rootView == null) {
-      throw new NullPointerException("rootView");
-    }
+    // The body of this method is generated in a way you would not otherwise write.
+    // This is done to optimize the compiled bytecode for size and performance.
+    int id;
+    missingId: {
+      id = R.id.companyMarketRecyclerview;
+      RecyclerView companyMarketRecyclerview = ViewBindings.findChildViewById(rootView, id);
+      if (companyMarketRecyclerview == null) {
+        break missingId;
+      }
 
-    return new FragmentHomeBinding((LinearLayout) rootView);
+      id = R.id.country;
+      TextView country = ViewBindings.findChildViewById(rootView, id);
+      if (country == null) {
+        break missingId;
+      }
+
+      id = R.id.hotSellingRecyclerView;
+      RecyclerView hotSellingRecyclerView = ViewBindings.findChildViewById(rootView, id);
+      if (hotSellingRecyclerView == null) {
+        break missingId;
+      }
+
+      id = R.id.language;
+      ImageView language = ViewBindings.findChildViewById(rootView, id);
+      if (language == null) {
+        break missingId;
+      }
+
+      id = R.id.linearLayoutCompat;
+      LinearLayoutCompat linearLayoutCompat = ViewBindings.findChildViewById(rootView, id);
+      if (linearLayoutCompat == null) {
+        break missingId;
+      }
+
+      id = R.id.tv_degree;
+      TextView tvDegree = ViewBindings.findChildViewById(rootView, id);
+      if (tvDegree == null) {
+        break missingId;
+      }
+
+      return new FragmentHomeBinding((ConstraintLayout) rootView, companyMarketRecyclerview,
+          country, hotSellingRecyclerView, language, linearLayoutCompat, tvDegree);
+    }
+    String missingId = rootView.getResources().getResourceName(id);
+    throw new NullPointerException("Missing required view with ID: ".concat(missingId));
   }
 }

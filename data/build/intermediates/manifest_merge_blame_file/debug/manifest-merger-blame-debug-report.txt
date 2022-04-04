@@ -3,7 +3,7 @@
 3    package="com.example.whether" >
 4
 5    <uses-sdk
-6        android:minSdkVersion="21"
+6        android:minSdkVersion="16"
 6-->C:\Users\User\Documents\GitHub\wethareapp\data\src\main\AndroidManifest.xml
 7        android:targetSdkVersion="30" />
 7-->C:\Users\User\Documents\GitHub\wethareapp\data\src\main\AndroidManifest.xml

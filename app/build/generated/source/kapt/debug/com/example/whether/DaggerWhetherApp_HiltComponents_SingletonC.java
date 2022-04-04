@@ -13,10 +13,6 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.whether.core.base.BaseActivity;
 import com.example.whether.core.base.BaseActivity_MembersInjector;
 import com.example.whether.core.base.BaseFragment_MembersInjector;
-import com.example.whether.receiver.AlarmReceiver;
-import com.example.whether.receiver.AlarmReceiver_MembersInjector;
-import com.example.whether.receiver.MyFirebaseMessagingService;
-import com.example.whether.receiver.MyFirebaseMessagingService_MembersInjector;
 import com.example.whether.retrofit.data.HomeDataSourse;
 import com.example.whether.retrofit.di.AppModule;
 import com.example.whether.retrofit.di.AppModule_ProvideGsonFactory;
@@ -112,11 +108,6 @@ public final class DaggerWhetherApp_HiltComponents_SingletonC extends WhetherApp
   }
 
   @Override
-  public void injectAlarmReceiver(AlarmReceiver alarmReceiver) {
-    injectAlarmReceiver2(alarmReceiver);
-  }
-
-  @Override
   public ActivityRetainedComponentBuilder retainedComponentBuilder() {
     return new ActivityRetainedCBuilder();
   }
@@ -124,11 +115,6 @@ public final class DaggerWhetherApp_HiltComponents_SingletonC extends WhetherApp
   @Override
   public ServiceComponentBuilder serviceComponentBuilder() {
     return new ServiceCBuilder();
-  }
-
-  private AlarmReceiver injectAlarmReceiver2(AlarmReceiver instance) {
-    AlarmReceiver_MembersInjector.injectPrefs(instance, getPrefs());
-    return instance;
   }
 
   public static final class Builder {
@@ -201,6 +187,10 @@ public final class DaggerWhetherApp_HiltComponents_SingletonC extends WhetherApp
         this.activity = activityParam;
       }
 
+      private Prefs getPrefs() {
+        return new Prefs(DaggerWhetherApp_HiltComponents_SingletonC.this.getSharedPreferences());
+      }
+
       private HomeDataSourse getHomeDataSourse() {
         return new HomeDataSourse(DaggerWhetherApp_HiltComponents_SingletonC.this.getNetworkService());
       }
@@ -262,12 +252,12 @@ public final class DaggerWhetherApp_HiltComponents_SingletonC extends WhetherApp
       }
 
       private BaseActivity injectBaseActivity2(BaseActivity instance) {
-        BaseActivity_MembersInjector.injectPrefs(instance, DaggerWhetherApp_HiltComponents_SingletonC.this.getPrefs());
+        BaseActivity_MembersInjector.injectPrefs(instance, getPrefs());
         return instance;
       }
 
       private HomeActivity injectHomeActivity2(HomeActivity instance) {
-        BaseActivity_MembersInjector.injectPrefs(instance, DaggerWhetherApp_HiltComponents_SingletonC.this.getPrefs());
+        BaseActivity_MembersInjector.injectPrefs(instance, getPrefs());
         return instance;
       }
 
@@ -314,7 +304,7 @@ public final class DaggerWhetherApp_HiltComponents_SingletonC extends WhetherApp
         }
 
         private HomeFragment injectHomeFragment2(HomeFragment instance) {
-          BaseFragment_MembersInjector.injectPrefs(instance, DaggerWhetherApp_HiltComponents_SingletonC.this.getPrefs());
+          BaseFragment_MembersInjector.injectPrefs(instance, ActivityCImpl.this.getPrefs());
           return instance;
         }
 
@@ -406,18 +396,6 @@ public final class DaggerWhetherApp_HiltComponents_SingletonC extends WhetherApp
   private final class ServiceCImpl extends WhetherApp_HiltComponents.ServiceC {
     private ServiceCImpl(Service service) {
 
-    }
-
-    @Override
-    public void injectMyFirebaseMessagingService(
-        MyFirebaseMessagingService myFirebaseMessagingService) {
-      injectMyFirebaseMessagingService2(myFirebaseMessagingService);
-    }
-
-    private MyFirebaseMessagingService injectMyFirebaseMessagingService2(
-        MyFirebaseMessagingService instance) {
-      MyFirebaseMessagingService_MembersInjector.injectPrefs(instance, DaggerWhetherApp_HiltComponents_SingletonC.this.getPrefs());
-      return instance;
     }
   }
 }

@@ -7,6 +7,6 @@ data class Data(@SerializedName("request")
                 @SerializedName("current_condition")
                 val currentCondition: List<CurrentConditionItem>?,
                 @SerializedName("weather")
-                val weather: List<WeatherItem>?,
+                val weather: MutableList<WeatherItem>?,
                 @SerializedName("ClimateAverages")
                 val climateAverages: List<ClimateAveragesItem>?)

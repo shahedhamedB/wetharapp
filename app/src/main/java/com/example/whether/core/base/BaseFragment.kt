@@ -1,5 +1,7 @@
 package com.example.whether.core.base
 
+import android.content.res.Configuration
+import android.content.res.Resources
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
@@ -31,6 +33,21 @@ abstract class BaseFragment : Fragment() {
             findNavController().popBackStack()
         }
 
+    }
+    fun setApplicationLanguage(newLanguage: String) {
+        val activityRes: Resources = resources
+        val activityConf: Configuration = activityRes.configuration
+        val newLocale = Locale(newLanguage)
+        activityConf.setLocale(newLocale)
+        activityRes.updateConfiguration(activityConf, activityRes.displayMetrics)
+        val applicationRes = requireContext().resources
+        //  val applicationRes: Resources = FacebookSdk.getApplicationContext().resources
+        val applicationConf: Configuration = applicationRes.configuration
+        applicationConf.setLocale(newLocale)
+        applicationRes.updateConfiguration(
+            applicationConf,
+            applicationRes.displayMetrics
+        )
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

@@ -2,8 +2,6 @@ package com.example.whether;
 
 import androidx.hilt.lifecycle.ViewModelFactoryModules;
 import com.example.whether.core.base.BaseActivity_GeneratedInjector;
-import com.example.whether.receiver.AlarmReceiver_GeneratedInjector;
-import com.example.whether.receiver.MyFirebaseMessagingService_GeneratedInjector;
 import com.example.whether.retrofit.di.AppModule;
 import com.example.whether.ui.home.HomeActivity_GeneratedInjector;
 import com.example.whether.ui.homewether.HomeFragment_GeneratedInjector;
@@ -155,7 +153,6 @@ public final class WhetherApp_HiltComponents {
   )
   @Singleton
   public abstract static class SingletonC implements WhetherApp_GeneratedInjector,
-      AlarmReceiver_GeneratedInjector,
       HiltWrapper_ActivityRetainedComponentManager_LifecycleComponentBuilderEntryPoint,
       ServiceComponentManager.ServiceComponentBuilderEntryPoint,
       SingletonComponent,
@@ -182,8 +179,7 @@ public final class WhetherApp_HiltComponents {
 
   @Subcomponent
   @ServiceScoped
-  public abstract static class ServiceC implements MyFirebaseMessagingService_GeneratedInjector,
-      ServiceComponent,
+  public abstract static class ServiceC implements ServiceComponent,
       GeneratedComponent {
     @Subcomponent.Builder
     abstract interface Builder extends ServiceComponentBuilder {

@@ -15,7 +15,7 @@ public final class HomeDataSourse extends com.example.whether.retrofit.data.Base
     @org.jetbrains.annotations.Nullable()
     public final java.lang.Object getTopApp(@org.jetbrains.annotations.NotNull()
     java.lang.String location, int num_of_days, @org.jetbrains.annotations.NotNull()
-    kotlin.coroutines.Continuation<? super com.example.whether.utils.Resource<com.example.whether.medule.WhetherResponse>> p2) {
+    kotlin.coroutines.Continuation<? super com.example.whether.utils.Resource<com.example.whether.medule.WhetherResponse>> continuation) {
         return null;
     }
 }

@@ -19,5 +19,5 @@ public abstract interface NetworkService {
     @retrofit2.http.Query(value = "q")
     java.lang.String location, @retrofit2.http.Query(value = "num_of_days")
     int num_of_days, @org.jetbrains.annotations.NotNull()
-    kotlin.coroutines.Continuation<? super retrofit2.Response<com.example.whether.medule.WhetherResponse>> p2);
+    kotlin.coroutines.Continuation<? super retrofit2.Response<com.example.whether.medule.WhetherResponse>> continuation);
 }
