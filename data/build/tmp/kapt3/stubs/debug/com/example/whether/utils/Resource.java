@@ -23,7 +23,7 @@ public final class Resource<T extends java.lang.Object> {
     
     @java.lang.Override()
     public boolean equals(@org.jetbrains.annotations.Nullable()
-    java.lang.Object p0) {
+    java.lang.Object other) {
         return false;
     }
     

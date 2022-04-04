@@ -29,10 +29,12 @@ public abstract class BaseAdapter<M extends java.lang.Object, V extends com.exam
     @java.lang.Deprecated()
     public static final int EMPTY_TYPE = 5213;
     
+    @kotlin.jvm.JvmOverloads()
     public BaseAdapter() {
         super();
     }
     
+    @kotlin.jvm.JvmOverloads()
     public BaseAdapter(@org.jetbrains.annotations.Nullable()
     java.util.List<M> items) {
         super();

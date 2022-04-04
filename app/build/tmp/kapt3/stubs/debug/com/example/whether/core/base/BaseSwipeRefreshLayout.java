@@ -7,11 +7,13 @@ public final class BaseSwipeRefreshLayout extends androidx.swiperefreshlayout.wi
     private final kotlin.Lazy listeners$delegate = null;
     private java.util.HashMap _$_findViewCache;
     
+    @kotlin.jvm.JvmOverloads()
     public BaseSwipeRefreshLayout(@org.jetbrains.annotations.NotNull()
     android.content.Context context) {
         super(null);
     }
     
+    @kotlin.jvm.JvmOverloads()
     public BaseSwipeRefreshLayout(@org.jetbrains.annotations.NotNull()
     android.content.Context context, @org.jetbrains.annotations.Nullable()
     android.util.AttributeSet attrs) {

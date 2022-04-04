@@ -36,7 +36,7 @@ public final class AstronomyItem {
     
     @java.lang.Override()
     public boolean equals(@org.jetbrains.annotations.Nullable()
-    java.lang.Object p0) {
+    java.lang.Object other) {
         return false;
     }
     

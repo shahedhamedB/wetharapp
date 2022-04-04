@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: com.zendesk:answerbot-providers:3.0.2@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/1b5d29dafafdc609b7f9c9e9a0ab98e4/transformed/jetified-answerbot-providers-3.0.2/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/1b5d29dafafdc609b7f9c9e9a0ab98e4/transformed/jetified-answerbot-providers-3.0.2/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/1b5d29dafafdc609b7f9c9e9a0ab98e4/transformed/jetified-answerbot-providers-3.0.2/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.zendesk/answerbot-providers/3.0.2/c7955031f54c8d20382769839149fffe8b05b4d1/answerbot-providers-3.0.2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.zendesk/answerbot-providers/3.0.2/b47831e8c619b886e71c4715748452a5e8034279/answerbot-providers-3.0.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
